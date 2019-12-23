@@ -10,19 +10,15 @@ from string import ascii_lowercase, digits
 
 def domains_by_size (size, tld):
     letters_and_digits = ascii_lowercase+digits
-
-    print(all)
+    filename = '{}_character_{}_domains.txt'.format(size, tld)
 
     keywords = [''.join(i) for i in product(letters_and_digits, repeat = int(size))]
-    count = 0
- 
     print('Generated {} {} domain names'.format(len(keywords), tld))
-    input('continue?')
 
-    for entry in keywords:
-        count = count+1
-        print (entry + tld)
-    print (count)
+    with open(filename, 'w') as file:
+        for entry in keywords:
+            domain_name = entry + tld
+            file.write (domain_name + '\n')
 
 if __name__ == '__main__':
     domains_by_size ()
