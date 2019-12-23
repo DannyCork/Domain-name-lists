@@ -9,12 +9,13 @@ Domain names can only use :
 - hyphens (“-“). 
 
 Spaces and other symbols are not permitted for use. 
-Names cannot begin or end with a hyphen and are not case sensitive.
+Names cannot begin or end with a hyphen.
+Names are not case sensitive.
 Domains cannot exceed 63 characters.
 
 
 Number of possible combinations
-
+ - 1 character 36
  - 2 letter 676 		(26\*26) 
  - 3 letter 17576	(26\*26\*26)
  - 4 letter 456976	(26\*26\*26\*26)
