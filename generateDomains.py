@@ -1,15 +1,23 @@
+import click
 from itertools import product
 from string import ascii_lowercase
 
+@click.command()
+@click.option('-tld', prompt='tld', help='tld.')
+@click.option('-size', prompt='size to generate', help='size of domain names to generate.')
 
 def domains_by_size (size, tld):
-	keywords = [''.join(i) for i in product(ascii_lowercase, repeat = size)]
-	count = 0
+    keywords = [''.join(i) for i in product(ascii_lowercase, repeat = int(size))]
+    count = 0
  
-	for entry in keywords:
-		count = count+1
-		print (entry + tld)
-	print (count)
+    print('Generated {} {} domain names'.format(len(keywords), tld))
+    input('continue?')
 
+    for entry in keywords:
+        count = count+1
+        print (entry + tld)
+    print (count)
 
-domains_by_size (3, '.ie')
+if __name__ == '__main__':
+    domains_by_size ()
+
